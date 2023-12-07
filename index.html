@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/avatar.png"
+      type="image/x-icon"
+    />
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div id="weatherApp">
+      <nav>
+        <!-- konum -->
+        <div class="location">
+          <p>
+            <i class="fa-solid fa-location-dot"></i>
+            Ankara, Türkiye<span>Bugün, 04 Ara 2023</span>
+          </p>
+        </div>
+
+        <!-- hava durumu -->
+        <div class="cityWeather">
+          <p class="degree">18°C</p>
+          <object
+            type="image/svg+xml"
+            data="./assets/icons/thunder.svg"
+            id="svgObject"
+          ></object>
+          <p class="weatherStatus">Gökgürültülü Sağanak Yağmur</p>
+        </div>
+
+        <div class="seperator"></div>
+
+        <!-- hava detay -->
+        <ul class="weatherInfo">
+          <li>Yağış: <span>13%</span></li>
+          <li>Nem: <span>47%</span></li>
+          <li>Rüzgar: <span>2 km/s</span></li>
+        </ul>
+
+        <div class="seperator"></div>
+
+        <!-- gün doğum/batım -->
+        <ul class="sunStatus">
+          <li>
+            <div>
+              <img src="./assets/icons/sunrise.svg" alt="Gün doğumu" />
+              <p>05:30</p>
+            </div>
+            <span>Gün doğumu</span>
+          </li>
+          <li>
+            <div>
+              <img src="./assets/icons/sunset.svg" alt="Gün batımı" />
+              <p>08:00</p>
+            </div>
+            <span>Gün batımı</span>
+          </li>
+        </ul>
+      </nav>
+
+      <main>
+        <!-- görselin üstüne kapatacak #000 ve alfası .2 olan bir siyah berde gelecek ki parlak görseller olursa yazılar kaybolmasın -->
+        <header>
+          <div>
+            <input
+              type="search"
+              class="glassEffect p10"
+              name="search"
+              id="serach"
+              placeholder="Şehir / Posta Kodu ..."
+            />
+          </div>
+          <!-- <div class="unitSwitch">
+            <input type="checkbox" />
+          </div> -->
+          <div>
+            <div class="language">
+              <div class="circle glassEffect">
+                <i class="fa-solid fa-earth-americas"></i>
+              </div>
+              <ul class="dropdownMenu glassEffect">
+                <li><a href="#">Türkçe</a></li>
+                <div class="seperator"></div>
+                <li><a href="#">English</a></li>
+                <div class="seperator"></div>
+                <li><a href="#">Русский</a></li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <div class="dropdown">
+              <div class="circle glassEffect">
+                <img src="./assets/images/avatar.png" alt="profile photo" />
+              </div>
+              <ul class="dropdownMenu glassEffect">
+                <li><a href="#">Kayıtlarım</a></li>
+                <li><a href="#">Ayarlar</a></li>
+                <li>
+                  <a href="#">Premium Ol <i class="fa-solid fa-star"></i></a>
+                </li>
+                <div class="seperator"></div>
+                <li><a href="#">Çıkış yap</a></li>
+              </ul>
+            </div>
+          </div>
+        </header>
+
+        <!-- Tabs -->
+        <div class="tab">
+          <div class="tab-wrap glassEffect p10">
+            <input type="radio" name="tabs" id="tab1" />
+            <div class="tab-label-content" id="tab1-content">
+              <label for="tab1">Bugün</label>
+              <div class="tab-content">
+                <div class="cardTab">
+                  <div class="card">
+                    <div class="glassEffect p10">
+                      <p class="dayDate">00:00 - 04:00</p>
+                      <p class="dayDegree">18°C</p>
+                      <object
+                        type="image/svg+xml"
+                        data="./assets/icons/thunder.svg"
+                        id="svgObject"
+                      ></object>
+                      <p class="dayWeatherStatus">
+                        Gökgürültülü Sağanak Yağmur
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="glassEffect p10">
+                      <p class="dayDate">04:00 - 08:00</p>
+                      <p class="dayDegree">18°C</p>
+                      <object
+                        type="image/svg+xml"
+                        data="./assets/icons/thunder.svg"
+                        id="svgObject"
+                      ></object>
+                      <p class="dayWeatherStatus">
+                        Gökgürültülü Sağanak Yağmur
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="glassEffect p10">
+                      <p class="dayDate">08:00 - 12:00</p>
+                      <p class="dayDegree">18°C</p>
+                      <object
+                        type="image/svg+xml"
+                        data="./assets/icons/thunder.svg"
+                        id="svgObject"
+                      ></object>
+                      <p class="dayWeatherStatus">
+                        Gökgürültülü Sağanak Yağmur
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="glassEffect p10">
+                      <p class="dayDate">12:00 - 16:00</p>
+                      <p class="dayDegree">18°C</p>
+                      <object
+                        type="image/svg+xml"
+                        data="./assets/icons/thunder.svg"
+                        id="svgObject"
+                      ></object>
+                      <p class="dayWeatherStatus">
+                        Gökgürültülü Sağanak Yağmur
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="glassEffect p10">
+                      <p class="dayDate">16:00 - 20:00</p>
+                      <p class="dayDegree">18°C</p>
+                      <object
+                        type="image/svg+xml"
+                        data="./assets/icons/thunder.svg"
+                        id="svgObject"
+                      ></object>
+                      <p class="dayWeatherStatus">
+                        Gökgürültülü Sağanak Yağmur
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="glassEffect p10">
+                      <p class="dayDate">20:00 - 24:00</p>
+                      <p class="dayDegree">18°C</p>
+                      <object
+                        type="image/svg+xml"
+                        data="./assets/icons/thunder.svg"
+                        id="svgObject"
+                      ></object>
+                      <p class="dayWeatherStatus">
+                        Gökgürültülü Sağanak Yağmur
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <input type="radio" name="tabs" id="tab2" />
+            <div class="tab-label-content" id="tab2-content">
+              <label for="tab2">Yarın</label>
+              <div class="tab-content">
+                <div class="cardTab">
+                  <div class="card">
+                    <div class="glassEffect p10">
+                      <p class="dayDate">00:00 - 04:00</p>
+                      <p class="dayDegree">18°C</p>
+                      <object
+                        type="image/svg+xml"
+                        data="./assets/icons/thunder.svg"
+                        id="svgObject"
+                      ></object>
+                      <p class="dayWeatherStatus">
+                        Gökgürültülü Sağanak Yağmur
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="glassEffect p10">
+                      <p class="dayDate">04:00 - 08:00</p>
+                      <p class="dayDegree">18°C</p>
+                      <object
+                        type="image/svg+xml"
+                        data="./assets/icons/thunder.svg"
+                        id="svgObject"
+                      ></object>
+                      <p class="dayWeatherStatus">
+                        Gökgürültülü Sağanak Yağmur
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="glassEffect p10">
+                      <p class="dayDate">08:00 - 12:00</p>
+                      <p class="dayDegree">18°C</p>
+                      <object
+                        type="image/svg+xml"
+                        data="./assets/icons/thunder.svg"
+                        id="svgObject"
+                      ></object>
+                      <p class="dayWeatherStatus">
+                        Gökgürültülü Sağanak Yağmur
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="glassEffect p10">
+                      <p class="dayDate">12:00 - 16:00</p>
+                      <p class="dayDegree">18°C</p>
+                      <object
+                        type="image/svg+xml"
+                        data="./assets/icons/thunder.svg"
+                        id="svgObject"
+                      ></object>
+                      <p class="dayWeatherStatus">
+                        Gökgürültülü Sağanak Yağmur
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="glassEffect p10">
+                      <p class="dayDate">16:00 - 20:00</p>
+                      <p class="dayDegree">18°C</p>
+                      <object
+                        type="image/svg+xml"
+                        data="./assets/icons/thunder.svg"
+                        id="svgObject"
+                      ></object>
+                      <p class="dayWeatherStatus">
+                        Gökgürültülü Sağanak Yağmur
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="glassEffect p10">
+                      <p class="dayDate">20:00 - 24:00</p>
+                      <p class="dayDegree">18°C</p>
+                      <object
+                        type="image/svg+xml"
+                        data="./assets/icons/thunder.svg"
+                        id="svgObject"
+                      ></object>
+                      <p class="dayWeatherStatus">
+                        Gökgürültülü Sağanak Yağmur
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <input type="radio" name="tabs" id="tab3" checked />
+            <div class="tab-label-content" id="tab3-content">
+              <label for="tab3">Haftalık</label>
+              <div class="tab-content">
+                <div class="cardTab">
+                  <div class="card">
+                    <div class="glassEffect p10">
+                      <p class="dayDate">Bugün</p>
+                      <p class="dayDegree">18°C</p>
+                      <object
+                        type="image/svg+xml"
+                        data="./assets/icons/thunder.svg"
+                        id="svgObject"
+                      ></object>
+                      <p class="dayWeatherStatus">
+                        Gökgürültülü Sağanak Yağmur
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="glassEffect p10">
+                      <p class="dayDate">Yarın</p>
+                      <p class="dayDegree">18°C</p>
+                      <object
+                        type="image/svg+xml"
+                        data="./assets/icons/thunder.svg"
+                        id="svgObject"
+                      ></object>
+                      <p class="dayWeatherStatus">
+                        Gökgürültülü Sağanak Yağmur
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="glassEffect p10">
+                      <p class="dayDate">11 Aralık</p>
+                      <p class="dayDegree">18°C</p>
+                      <object
+                        type="image/svg+xml"
+                        data="./assets/icons/thunder.svg"
+                        id="svgObject"
+                      ></object>
+                      <p class="dayWeatherStatus">
+                        Gökgürültülü Sağanak Yağmur
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="glassEffect p10">
+                      <p class="dayDate">12 Aralık</p>
+                      <p class="dayDegree">18°C</p>
+                      <object
+                        type="image/svg+xml"
+                        data="./assets/icons/thunder.svg"
+                        id="svgObject"
+                      ></object>
+                      <p class="dayWeatherStatus">
+                        Gökgürültülü Sağanak Yağmur
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="glassEffect p10">
+                      <p class="dayDate">13 Aralık</p>
+                      <p class="dayDegree">18°C</p>
+                      <object
+                        type="image/svg+xml"
+                        data="./assets/icons/thunder.svg"
+                        id="svgObject"
+                      ></object>
+                      <p class="dayWeatherStatus">
+                        Gökgürültülü Sağanak Yağmur
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="glassEffect p10">
+                      <p class="dayDate">14 Aralık</p>
+                      <p class="dayDegree">18°C</p>
+                      <object
+                        type="image/svg+xml"
+                        data="./assets/icons/thunder.svg"
+                        id="svgObject"
+                      ></object>
+                      <p class="dayWeatherStatus">
+                        Gökgürültülü Sağanak Yağmur
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="glassEffect p10">
+                      <p class="dayDate">15 Aralık</p>
+                      <p class="dayDegree">18°C</p>
+                      <object
+                        type="image/svg+xml"
+                        data="./assets/icons/thunder.svg"
+                        id="svgObject"
+                      ></object>
+                      <p class="dayWeatherStatus">
+                        Gökgürültülü Sağanak Yağmur
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <div class="appBackground"></div>
+    <div class="lighting flashit"></div>
+    <audio autoplay loop>
+      <source src="./assets/sounds/thunder.wav" type="audio/wav" />
+      Your browser does not support the audio element.
+    </audio>
+  </body>
+</html>

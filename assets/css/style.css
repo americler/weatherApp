@@ -1,0 +1,490 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;900&display=swap");
+
+/* cam efekti için oluşturulmuştur */
+@import url(./glassmorphism.css);
+
+/* yıldırım efekti için oluşturulmuştur*/
+@import url(./thunder.css);
+
+/* animasyonlar ilgili svg dosyalarının içinde oluşturulmutur */
+
+:root {
+  --text-primary: rgb(255, 255, 255);
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --background: rgb(13, 44, 82);
+  --border: rgba(255, 255, 255, 0.4);
+  --weather-detail-background: rgba(255, 255, 255, 0.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+.p10 {
+  padding: 10px;
+}
+
+#weatherApp {
+  display: grid;
+  grid-template-columns: 330px 1fr;
+  height: 100%;
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  color: var(--text-primary);
+}
+
+.seperator {
+  width: 100%;
+  border-bottom: 1px solid var(--border);
+}
+
+nav {
+  padding: 0 20px;
+  background-color: var(--background);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+nav .location {
+  width: 100%;
+  padding: 0 20px;
+}
+
+nav .location p {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 30px;
+}
+
+nav .location p span {
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 18px;
+  display: block;
+  margin-left: 25px;
+}
+
+nav .cityWeather {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+nav .cityWeather p.degree {
+  font-size: 64px;
+  line-height: 72px;
+  font-weight: 600;
+}
+
+nav .cityWeather img.weatherIcon {
+  height: 150px;
+  width: auto;
+  margin: 10px 0;
+}
+
+nav .cityWeather p.weatherStatus {
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 30px;
+}
+
+nav ul.weatherInfo,
+nav ul.sunStatus {
+  width: 100%;
+}
+nav ul.weatherInfo li,
+nav ul.sunStatus li {
+  background-color: var(--weather-detail-background);
+  padding: 16px;
+  border-radius: 16px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul.weatherInfo li:last-child,
+nav ul.sunStatus li:last-child {
+  margin-bottom: 0;
+}
+
+nav ul.sunStatus li div {
+  display: flex;
+  align-items: center;
+}
+
+nav ul.sunStatus li div img {
+  margin-right: 10px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+}
+
+nav ul.sunStatus li span {
+  color: var(--text-secondary);
+  font-weight: 100;
+}
+
+.appBackground {
+  background-image: url("../images/thunders.jpg");
+  background-repeat: no-repeat;
+  background-attachment: local;
+  background-position: bottom;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-origin: content-box;
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: -2;
+}
+
+main {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+main header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+main header input {
+  color: var(--text-primary);
+  font-size: 16px;
+  height: 48px;
+  width: 250px;
+  transition: all 0.3s;
+}
+
+main header input:focus {
+  width: 700px;
+}
+
+main header input::placeholder {
+  color: var(--text-primary);
+}
+
+main header .dropdown {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+main header .dropdown .circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main header .dropdown .circle img {
+  width: 110%;
+  height: auto;
+}
+
+main header .dropdown:hover .dropdownMenu,
+main header .dropdown .circle:hover + .dropdownMenu,
+main header .dropdownMenu:hover {
+  display: block;
+}
+
+main header ul.dropdownMenu {
+  width: 270px;
+  display: none;
+  padding: 20px;
+  position: absolute;
+  right: 0px;
+}
+
+main header ul.dropdownMenu li {
+  position: relative;
+}
+
+main header ul.dropdownMenu li .fa-star {
+  color: goldenrod;
+  position: absolute;
+  top: -5px;
+  margin-left: 5px;
+}
+
+main header .dropdown ul.dropdownMenu li {
+  font-size: 16px;
+  line-height: 20px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+main header .dropdown ul.dropdownMenu li a {
+  text-decoration: none;
+  color: var(--text-secondary);
+}
+
+main header .dropdown ul.dropdownMenu li:hover a {
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+/* dil */
+main header .language {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+main header .language .circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main header .language:hover .dropdownMenu,
+main header .language .circle:hover + .dropdownMenu,
+main header .language .dropdownMenu:hover {
+  display: block;
+}
+
+main header .language ul.dropdownMenu {
+  width: auto;
+  display: none;
+  padding: 20px;
+  position: absolute;
+  right: 0px;
+}
+
+main header .language ul.dropdownMenu li {
+  font-size: 16px;
+  line-height: 20px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+main header .language ul.dropdownMenu li a {
+  text-decoration: none;
+  color: var(--text-secondary);
+}
+
+main header .language ul.dropdownMenu li:hover a {
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+/* header .unitSwitch input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 30px;
+  width: 60px;
+  background-color: #34384b;
+  border-radius: 50px;
+  position: relative;
+  margin-left: 10px;
+  cursor: pointer;
+  outline: none;
+  transition: 0.3s;
+}
+
+header .unitSwitch input[type="checkbox"]:before {
+  content: "";
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  background-color: #d5d5d5;
+  border-radius: 50%;
+  left: 10px;
+  top: 7px;
+  transition: 0.3s;
+}
+
+header .unitSwitch input[type="checkbox"]:after {
+  content: "°C";
+  font-family: "Montserrat", sans-serif;
+  color: red;
+  font-size: 20px;
+  left: 55px;
+  bottom: -6px;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+header .unitSwitch input[type="checkbox"]:checked {
+  background-color: #19d28f;
+}
+
+header .unitSwitch input[type="checkbox"]:checked:before {
+  background-color: #1f212d;
+  left: 38px;
+}
+
+header .unitSwitch input[type="checkbox"]:checked:after {
+  content: "°F";
+  color: yellow;
+} */
+
+main .tab {
+  height: 350px;
+}
+
+main .tab .cardTab {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  overflow-x: scroll;
+  cursor: grab;
+  padding-bottom: 10px;
+}
+
+.main .tab .cardTab:active {
+  cursor: grabbing;
+}
+
+main p.dayWeatherStatus {
+  text-align: center;
+}
+
+main .tab .cardTab .card {
+  width: 215px;
+  height: auto;
+  margin-right: 20px;
+  flex: 1 0 auto;
+  flex-grow: 0;
+  cursor: grab;
+}
+
+main .tab .cardTab .card:last-child {
+  margin-right: 0;
+}
+
+main .tab .cardTab .card object {
+  width: 70%;
+  margin: 0 15%;
+}
+
+.cardTab::-webkit-scrollbar {
+  width: 8px; /* Scrollbar genişliği */
+}
+
+.cardTab::-webkit-scrollbar-thumb {
+  background-color: var(--text-secondary);
+  border-radius: 8px;
+  width: 3px;
+}
+
+.cardTab::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.29);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.6px);
+  -webkit-backdrop-filter: blur(6.6px);
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Scrollbar arka plan rengi */
+  width: 5px;
+}
+
+input[type="radio"][name="tabs"] {
+  position: relative;
+  z-index: 10;
+  border-bottom: 3px solid transparent;
+  display: none;
+}
+input[type="radio"][name="tabs"]:checked + .tab-label-content label {
+  background-color: var(--background);
+  color: var(--text-primary);
+  border-radius: 12px;
+}
+input[type="radio"][name="tabs"]:checked + .tab-label-content .tab-content {
+  display: block;
+}
+
+label {
+  cursor: pointer;
+  color: var(--text-primary);
+  box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: inline-flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  text-align: center;
+  height: 56px;
+  -webkit-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+  width: 100%;
+}
+
+.tab-wrap {
+  position: relative;
+  display: -webkit-box;
+  display: flex;
+  top: 0;
+}
+.tab-label-content {
+  width: 100%;
+}
+
+.tab-label-content .tab-content {
+  width: 100%;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  line-height: 130%;
+  display: none;
+}
+
+.tab-label-content .tab-content:after {
+  right: 0;
+  background: linear-gradient(-90deg, var(--background), transparent);
+}
+
+@media screen and (max-width: 576px) {
+  #weatherApp {
+    width: 100vw;
+    display: flex;
+    box-sizing: border-box;
+  }
+  nav {
+    height: calc(100% - 100px);
+    padding-top: 90px;
+  }
+  header {
+    width: 100%;
+    position: absolute;
+    top: 20px;
+    justify-content: normal !important;
+  }
+
+  main header input {
+    width: 100%;
+  }
+
+  main header input:focus {
+    width: 100%;
+  }
+}

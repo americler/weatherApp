@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="170" viewBox="0 0 270 270">
+   <style>
+    @-webkit-keyframes moveThunder {
+      0% {
+        transform: translateY(110px) translateX(50%);
+      }
+      20% {
+        transform: translateY(125px) translateX(50%);
+      }
+      40% {
+        transform: translateY(115px) translateX(50%);
+      }
+      60% {
+        transform: translateY(145px) translateX(50%);
+      }
+      80% {
+        transform: translateY(115px) translateX(50%);
+      }
+      100% {
+        transform: translateY(110px) translateX(50%);
+      }
+    }
+
+    @keyframes moveThunder {
+      0% {
+        transform: translateY(110px) translateX(50%);
+      }
+      20% {
+        transform: translateY(125px) translateX(50%);
+      }
+      40% {
+        transform: translateY(115px) translateX(50%);
+      }
+      60% {
+        transform: translateY(145px) translateX(50%);
+      }
+      80% {
+        transform: translateY(115px) translateX(50%);
+      }
+      100% {
+        transform: translateY(110px) translateX(50%);
+      }
+    }
+
+    @-webkit-keyframes moveDarkCloud {
+      0% {
+        transform: translateX(50px);
+      }
+      50% {
+        transform: translateX(30px);
+      }
+      100% {
+        transform: translateX(50px);
+      }
+    }
+
+    @keyframes moveDarkCloud {
+      0% {
+        transform: translateX(50px);
+      }
+      50% {
+        transform: translateX(30px);
+      }
+      100% {
+        transform: translateX(50px);
+      }
+    }
+
+    @keyframes moveLightCloud {
+      0% {
+        transform: translateX(50px);
+      }
+      50% {
+        transform: translateX(70px);
+      }
+      100% {
+        transform: translateX(50px);
+      }
+    }
+
+
+
+    #thunder {
+      animation: moveThunder 2s infinite alternate;
+    }
+
+    #cloud #darkCloud{
+      animation: moveDarkCloud 4s infinite alternate;
+    }
+
+    #cloud #lightCloud{
+      animation: moveLightCloud 4s infinite alternate;
+    }
+  </style>
+  <g id="thunderWeather" data-name="Thunder Weather" transform="translate(-10)">
+    <g id="thunder" data-name="Thunder" transform="translate(76.167 115.286)">
+      <path id="Path_67" data-name="Path 67" d="M61.5,47.643,18.816,110.464a3.54,3.54,0,0,1-5.983-.115,3.022,3.022,0,0,1-.345-2.991L28.251,64.211H6.62l19.329-50.74,1.266-3.452H56.784L39.066,47.643H61.5Z" transform="translate(-6.62 -10.02)" fill="#fab03c"/>
+      <path id="Path_68" data-name="Path 68" d="M53.113,51.1l-40.27,59.254a3.022,3.022,0,0,1-.345-2.991L28.261,64.211H6.63l20.6-54.191H50.006L30.677,51.1H53.113Z" transform="translate(-6.515 -10.02)" fill="#f6cb43"/>
+    </g>
+    <g id="cloud" data-name="cloud">
+      <path id="lightCloud" data-name="Light Cloud" d="M207.331,105.391c0,22.781-18.064,41.19-40.385,41.19H40.385C18.064,146.581,0,128.172,0,105.391A52.429,52.429,0,0,1,15.187,68.228a51.275,51.275,0,0,1,36.7-15.418c0-24.852,16.8-45.677,39.464-51.2A43.557,43.557,0,0,1,103.665,0c28.649,0,51.89,23.586,51.89,52.811C184.09,52.811,207.331,76.282,207.331,105.391Z" transform="translate(10)" fill="#f7f7f7"/>
+      <path id="darkCloud" data-name="Dark Cloud" d="M182.709,103.921c0,22.781-18.179,41.19-40.5,41.19H40.385C18.064,145.111,0,126.7,0,103.921A52.429,52.429,0,0,1,15.187,66.757,51.275,51.275,0,0,1,51.89,51.34c0-24.852,16.8-45.677,39.464-51.2,22.666,5.523,39.464,26.348,39.464,51.2C159.468,51.34,182.709,74.811,182.709,103.921Z" transform="translate(10 1.471)" fill="#e6e6e6"/>
+    </g>
+  </g>
+</svg>
