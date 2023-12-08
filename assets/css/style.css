@@ -465,14 +465,38 @@ label {
 
 @media screen and (max-width: 576px) {
   #weatherApp {
-    width: 100vw;
     display: flex;
-    box-sizing: border-box;
+    flex-direction: column;
   }
+
   nav {
-    height: calc(100% - 100px);
-    padding-top: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Elemanları dikeyde ortala */
   }
+
+  nav .location {
+    margin-top: 90px;
+  }
+
+  nav .cityWeather,
+  nav .weatherInfo {
+    display: flex;
+    flex-wrap: wrap; /* Yan yana sıralama, sığmazsa alt satıra geç */
+    justify-content: center; /* Elemanları yatayda ortala */
+  }
+
+  nav .cityWeather,
+  nav .weatherInfo li {
+    width: 100%; /* Genişlik tam ekran genişliği olsun */
+    margin-bottom: 10px; /* Elemanlar arasında boşluk bırak */
+  }
+
+  nav .sunStatus {
+    width: 100%; /* Genişlik tam ekran genişliği olsun */
+    margin: 10px 0;
+  }
+
   header {
     width: 100%;
     position: absolute;
@@ -486,5 +510,9 @@ label {
 
   main header input:focus {
     width: 100%;
+  }
+
+  .seperator {
+    visibility: hidden;
   }
 }
