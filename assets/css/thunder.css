@@ -2,8 +2,6 @@
   flex-grow: 1;
   background-image: url("../images/thunders.jpg");
   background-repeat: no-repeat;
-  background-attachment: local;
-  background-position: bottom;
   position: fixed;
   top: 0;
   left: 0;
@@ -13,7 +11,6 @@
   background-origin: content-box;
   background-size: cover;
   background-attachment: fixed;
-  z-index: -2;
   -webkit-filter: brightness(1.5);
   filter: brightness(1.5);
   -o-filter: brightness(1.5);

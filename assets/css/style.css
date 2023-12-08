@@ -141,8 +141,6 @@ nav ul.sunStatus li span {
 .appBackground {
   background-image: url("../images/thunders.jpg");
   background-repeat: no-repeat;
-  background-attachment: local;
-  background-position: bottom;
   position: fixed;
   top: 0;
   left: 0;
@@ -294,57 +292,6 @@ main header .language ul.dropdownMenu li:hover a {
   text-decoration: none;
   color: var(--text-primary);
 }
-
-/* header .unitSwitch input[type="checkbox"] {
-  -webkit-appearance: none;
-  appearance: none;
-  height: 30px;
-  width: 60px;
-  background-color: #34384b;
-  border-radius: 50px;
-  position: relative;
-  margin-left: 10px;
-  cursor: pointer;
-  outline: none;
-  transition: 0.3s;
-}
-
-header .unitSwitch input[type="checkbox"]:before {
-  content: "";
-  position: absolute;
-  height: 16px;
-  width: 16px;
-  background-color: #d5d5d5;
-  border-radius: 50%;
-  left: 10px;
-  top: 7px;
-  transition: 0.3s;
-}
-
-header .unitSwitch input[type="checkbox"]:after {
-  content: "°C";
-  font-family: "Montserrat", sans-serif;
-  color: red;
-  font-size: 20px;
-  left: 55px;
-  bottom: -6px;
-  letter-spacing: 1px;
-  transition: 0.3s;
-}
-
-header .unitSwitch input[type="checkbox"]:checked {
-  background-color: #19d28f;
-}
-
-header .unitSwitch input[type="checkbox"]:checked:before {
-  background-color: #1f212d;
-  left: 38px;
-}
-
-header .unitSwitch input[type="checkbox"]:checked:after {
-  content: "°F";
-  color: yellow;
-} */
 
 main .tab {
   height: 350px;
