@@ -493,8 +493,8 @@ label {
   }
 
   nav .sunStatus {
-    width: 100%; /* Genişlik tam ekran genişliği olsun */
-    margin: 10px 0;
+    width: 100%;
+    margin-bottom: 20px;
   }
 
   header {
@@ -513,6 +513,7 @@ label {
   }
 
   .seperator {
-    visibility: hidden;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 }
