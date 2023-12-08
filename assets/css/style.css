@@ -412,7 +412,6 @@ label {
 
 @media screen and (max-width: 576px) {
   #weatherApp {
-    width: 100vw;
     display: flex;
     flex-direction: column;
   }
@@ -463,5 +462,9 @@ label {
   .seperator {
     margin-top: 10px;
     margin-bottom: 10px;
+  }
+
+  .appBackground {
+    width: 100%;
   }
 }
