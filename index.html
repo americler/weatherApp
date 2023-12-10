@@ -47,9 +47,11 @@
           .getRegistrations()
           .then(function (registrations) {
             if (registrations.length === 0) {
-              navigator.serviceWorker.register("/sw.js").then((reg) => {
-                console.log(reg);
-              });
+              navigator.serviceWorker
+                .register("https://americler.github.io/weatherApp/sw.js")
+                .then((reg) => {
+                  console.log(reg);
+                });
             } else {
               console.log(registrations);
             }
