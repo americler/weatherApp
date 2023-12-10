@@ -2,13 +2,16 @@
 
 const CACHE_NAME = "weather-app-cache-v1";
 const urlsToCache = [
-  "/",
-  "/index.html",
-  "/manifest.json",
-  "/assets/css/style.css",
-  "/assets/images/avatar.png",
-  "/assets/icons/thunder.svg",
-  "/assets/sounds/thunder.wav",
+  "/weatherApp/",
+  "/weatherApp/index.html",
+  "/weatherApp/manifest.json",
+  "/weatherApp/assets/css/style.css",
+  "/weatherApp/assets/images/avatar.png",
+  "/weatherApp/assets/icons/thunder.svg",
+  "/weatherApp/assets/sounds/thunder.wav",
+  "/weatherApp/assets/images/logo144x144.png",
+  "/weatherApp/assets/icons/sunrise.svg",
+  // ... diğer eklenen URL'leri buraya ekleyin
 ];
 
 self.addEventListener("install", (event) => {
