@@ -42,25 +42,31 @@
     />
     <title>Weather App</title>
     <script>
+      self.addEventListener("install", (event) => {
+        console.log("Service worker installed");
+      });
+      self.addEventListener("activate", (event) => {
+        console.log("Service worker activated");
+      });
+    </script>
+    <script defer>
       if ("serviceWorker" in navigator) {
-        window.addEventListener("load", function () {
-          navigator.serviceWorker
-            .register("service-worker.js")
-            .then(
-              function (registration) {
-                console.log("Registered!");
-              },
-              function (err) {
-                console.log("ServiceWorker registration failed: ", err);
-              }
-            )
-            .catch(function (err) {
-              console.log(err);
-            });
-        });
-      } else {
-        console.log("service worker is not supported");
+        navigator.serviceWorker
+          .getRegistrations()
+          .then(function (registrations) {
+            if (registrations.length === 0) {
+              navigator.serviceWorker.register("/sw.js").then((reg) => {
+                console.log(reg);
+              });
+            } else {
+              console.log(registrations);
+            }
+          });
       }
+
+      fetch("https://jsonplaceholder.typicode.com/todos")
+        .then((response) => response.json())
+        .then((json) => console.log(json));
     </script>
   </head>
   <body>
