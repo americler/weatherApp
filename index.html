@@ -48,7 +48,7 @@
           .then(function (registrations) {
             if (registrations.length === 0) {
               navigator.serviceWorker
-                .register("showInAppInstallPromotion/sw.js")
+                .register("https://americler.github.io/weatherApp/sw.js")
                 .then((reg) => {
                   console.log(reg);
                 });
