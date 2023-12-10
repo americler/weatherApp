@@ -3,17 +3,17 @@
   "name": "Best Weather",
   "icons": [
     {
-      "src": "/assets/images/logo512x512.svg",
+      "src": "https://americler.github.io/weatherApp/assets/images/logo512x512.svg",
       "type": "image/svg+xml",
       "sizes": "512x512"
     },
     {
-      "src": "/assets/images/logo192x192.png",
+      "src": "https://americler.github.io/weatherApp/assets/images/logo192x192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/assets/images/logo512x512.png",
+      "src": "https://americler.github.io/weatherApp/assets/images/logo512x512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
