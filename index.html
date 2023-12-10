@@ -48,7 +48,7 @@
           .then(function (registrations) {
             if (registrations.length === 0) {
               navigator.serviceWorker
-                .register("https://americler.github.io/weatherApp/sw.js")
+                .register("showInAppInstallPromotion/sw.js")
                 .then((reg) => {
                   console.log(reg);
                 });
@@ -70,6 +70,7 @@
         // Your own UI doesn't have to be a single element, you
         // can have buttons in different locations, or wait to prompt
         // as part of a critical journey.
+        showInAppInstallPromotion();
       });
     </script>
   </head>
