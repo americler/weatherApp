@@ -22,6 +22,14 @@
       content="https://americler.github.io/weatherApp/assets/images/logo144x144.png"
     />
     <meta name="msapplication-TileColor" content="#0d2c52" />
+    <link
+      rel="manifest"
+      href="https://americler.github.io/weatherApp/manifest.json"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="https://americler.github.io/weatherApp/assets/images/logo144x144.png"
+    />
 
     <meta property="og:title" content="Dünyann en iyi hava durumu uygulaması" />
     <meta
@@ -30,6 +38,27 @@
     />
     <meta property="og:image" content="./assets/images/avatar.png" />
     <title>Weather App</title>
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker
+            .register("service-worker.js")
+            .then(
+              function (registration) {
+                console.log("Registered!");
+              },
+              function (err) {
+                console.log("ServiceWorker registration failed: ", err);
+              }
+            )
+            .catch(function (err) {
+              console.log(err);
+            });
+        });
+      } else {
+        console.log("service worker is not supported");
+      }
+    </script>
   </head>
   <body>
     <div id="weatherApp">
