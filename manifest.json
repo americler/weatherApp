@@ -21,5 +21,6 @@
   "start_url": "https://americler.github.io/weatherApp/",
   "background_color": "#0d2c52",
   "display": "standalone",
-  "theme_color": "#0d2c52"
+  "theme_color": "#0d2c52",
+  "service_worker": "https://americler.github.io/weatherApp/sw.js"
 }
